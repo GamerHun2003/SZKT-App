@@ -7,6 +7,7 @@ import { TicketComponent } from './components/pages/ticket/ticket.component';
 
 
 export const routes: Routes = [
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     {path: 'home', component: HomeComponent},
     {path: 'schedule', component: ScheduleComponent},
     {path: 'favorites', component: FavoritesComponent},

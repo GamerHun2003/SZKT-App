@@ -1,0 +1,38 @@
+<legend class="form-title">Személyes adatok</legend>
+<div class="form-container">    
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <legend class="form-title">Veztéknév</legend>
+        <mat-form-field appearance="fill">
+            <input matInput formControlName="firstName" />
+            <mat-error *ngIf="form.get('firstName')?.hasError('required')">Add meg a vezetékneved</mat-error>
+        </mat-form-field>
+        <legend class="form-title">Keresztnév</legend>
+        <mat-form-field appearance="fill">
+            <input matInput formControlName="lastName" />
+            <mat-error *ngIf="form.get('lastName')?.hasError('required')">Add meg a keresztneved</mat-error>
+        </mat-form-field>
+        
+        <legend class="form-title">Email-cím</legend>
+        <mat-form-field appearance="fill">
+            <input matInput formControlName="email" type="email" placeholder="pelda@gmail.com"/>
+            <mat-error *ngIf="form.get('email')?.hasError('required')">Szükséges email címet megadni</mat-error>
+            <mat-error *ngIf="form.get('email')?.hasError('email')">Valós emailt adj meg</mat-error>
+        </mat-form-field>
+        
+        <legend class="form-title">Kártyaszám</legend>
+        <mat-form-field appearance="fill">
+            <input matInput formControlName="cardNumber" type="text" [value]="form.get('cardNumber')?.value | cardNumber" placeholder="5342-6334-4243-2344"/>
+            <mat-error *ngIf="form.get('cardNumber')?.hasError('required')">Card number is required</mat-error>
+            <mat-error *ngIf="form.get('cardNumber')?.hasError('pattern')">Invalid card number format</mat-error>
+        </mat-form-field>
+
+
+        <legend class="form-title">Diákazonosító</legend>
+        <mat-form-field appearance="fill">
+            <mat-label>Student ID</mat-label>
+            <input matInput formControlName="studentId" />
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Mentés</button>
+    </form>
+  </div>
