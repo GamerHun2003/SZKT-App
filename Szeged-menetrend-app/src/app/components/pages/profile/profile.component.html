@@ -1,1 +1,30 @@
-<app-userinfos></app-userinfos>
+<body>
+    
+    <app-loginmessage [user]="user"></app-loginmessage>
+    <p>Profil</p>
+    <div class="profile-button" (click)="dialogpopup()">
+        <mat-icon class="profile-button-icons">account_circle</mat-icon>
+        <span>Profil beállítások</span>
+    </div>
+    <div class="profile-button" >
+        <mat-icon class="profile-button-icons">settings</mat-icon>
+        <span>Beállítások</span>
+    </div>
+    <div class="profile-button" >
+        <mat-icon class="profile-button-icons">help</mat-icon>
+        <span>Segítség</span>
+    </div>
+    <div class="profile-button" >
+        <mat-icon class="profile-button-icons">dashboard_customize</mat-icon>
+        <span>Jelmagyarázat</span>
+    </div>
+    <div class="buttons-container">
+        <button class="logoutbutton" *ngIf="user?.isloggedIn" (click)="logout()">Kijelentkezés</button>
+        <button class="registrationbutton" *ngIf="!user?.isloggedIn && !user?.isregisteredIn" (click)="registredin()">Regisztrálás</button>
+        <button class="loginbutton" *ngIf="!user?.isloggedIn && user?.isregisteredIn" (click)="login()">Bejelentkezés</button>
+        <button class="deletebutton" *ngIf="user?.isloggedIn && user?.isregisteredIn" (click)="delaccount()">Fióktörlés <mat-icon class="Trashicon">delete_forever</mat-icon></button>
+    </div>
+    
+</body>
+
+

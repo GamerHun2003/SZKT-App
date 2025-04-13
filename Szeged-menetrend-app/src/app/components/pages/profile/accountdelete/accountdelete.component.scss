@@ -1,0 +1,109 @@
+$electricblue: #4787ff;
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #121212;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .delete-container {
+    background-color: #1d1d1d;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid $electricblue;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    text-align: center;
+  
+    h2 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: $electricblue;
+      margin-bottom: 1rem;
+    }
+  
+    p {
+      font-size: 0.95rem;
+      color: #b0b0b0;
+      margin-bottom: 1.5rem;
+    }
+  
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+  
+      .confirmbutton {
+        flex: 1;
+        padding: 10px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        background-color: #2196f3;
+        color: white;
+        border-radius: 6px;
+        border: none;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #1976d2;
+        }
+      }
+  
+      .cancelbutton {
+        flex: 1;
+        padding: 10px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        border: 2px solid $electricblue;
+        color: $electricblue;
+        background-color: transparent;
+        border-radius: 6px;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          border-color: #2d8dec;
+          color: #2d8dec;
+          background-color: #2b2b2b;
+        }
+      }
+    }
+    .delete-dialog{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        background-color: #121212;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .delete-container {
+      padding: 1rem;
+  
+      h2 {
+        font-size: 1rem;
+      }
+  
+      p {
+        font-size: 0.85rem;
+      }
+  
+      .button-group {
+        flex-direction: column;
+        gap: 0.75rem;
+  
+        .confirmbutton,
+        .cancelbutton {
+          font-size: 0.85rem;
+          padding: 8px;
+          color: white;
+        }
+      }
+    }
+  }

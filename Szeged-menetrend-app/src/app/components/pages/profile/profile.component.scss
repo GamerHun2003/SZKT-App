@@ -1,0 +1,245 @@
+$backgroundcolor:rgb(41, 41, 41);
+$profilebuttonbackground: rgb(27, 27, 27);
+$electricblue: #4787ff;
+$textcolor: white;
+$deletecolor: #ce0000;
+body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(41, 41, 41);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 40px;
+  font-weight: bold;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+h1{
+  color: $textcolor;
+  font-weight: bold;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+p {
+  font-weight: bold;
+  font-family: monospace;
+  text-transform: uppercase;
+  color: $electricblue;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+
+.profile-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+
+  width: 80vw;
+  max-width: 400px;
+  height: 60px;
+
+  padding: 0 20px;
+  margin: 10px 0;
+
+  border-radius: 12px;
+  background-color: $profilebuttonbackground;
+  border: 2px solid $electricblue;
+  color: $textcolor;
+  font-size: 20px;
+
+  box-shadow: 0 0 10px black;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  .profile-button-icons {
+    font-size: 28px;
+    color: $electricblue;
+    padding-right:5px;
+    padding-bottom: 6px;
+  }
+
+  span {
+    flex: 1;
+    text-align: left;
+  }
+}
+
+.logoutbutton{
+  width: 25vw;
+  padding: 10px;
+  font-size: 0.95rem;
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: $deletecolor;
+  color: $textcolor;
+  border-radius: 6px;
+  margin-top: 10rem;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  
+}
+.registrationbutton{
+  width: 25vw;
+  padding: 10px;
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  font-weight: bold;
+  background-color: $electricblue;
+  color: $textcolor;
+  border-radius: 6px;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+  box-shadow: 0 0px 10px rgb(0, 0, 0);
+}
+.loginbutton{
+  width: 25vw;
+  padding: 10px;
+  font-size: 0.95rem;
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: $electricblue;
+  color: $textcolor;
+  border-radius: 6px;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.deletebutton{
+  width: 25vw;
+  padding: 5px;
+  font-size: 0.95rem;
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: $electricblue;
+  color: $textcolor;
+  border-radius: 6px;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  .Trashicon{
+    font-size: 28px;
+    color: $textcolor;
+    padding-bottom: 7px;
+  }
+}
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 450px) {
+  .profile-button {
+    font-size: 18px;
+    height: 56px;
+    padding: 0 16px;
+  }
+
+
+
+  .logoutbutton{
+    width: 80vw;
+    padding: 10px;
+    font-size: 1.25rem;
+    margin-top: 10px;
+    
+  }
+  .registrationbutton{
+    width: 80vw;
+    padding: 10px;
+    font-size: 1.25rem;
+    
+  }
+
+  .loginbutton{
+    width: 80vw;
+    padding: 10px;
+    font-size: 1.25rem;
+    
+  }
+  .deletebutton {
+    width: 80vw;
+    font-size: 1.25rem;
+    margin-top: 5px;
+  }
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+}
+@media (max-height: 670px) {
+  .profile-button {
+    font-size: 14px;
+    height: 45px;
+    padding: 0 12px;
+  }
+
+  mat-icon {
+    font-size: 20px;
+  }
+
+  .logoutbutton{
+    width: 70vw;
+    padding: 7.5px;
+    font-size: 1.0rem;
+    margin-top: 10px;
+    
+  }
+  .registrationbutton{
+    width: 70vw;
+    padding: 7.5px;
+    font-size: 1.0rem;
+    
+  }
+
+  .loginbutton{
+    width: 70vw;
+    padding: 7.5px;
+    font-size: 1.0rem;
+    
+  }
+  .deletebutton {
+    width: 70vw;
+    font-size: 1.10rem;
+    margin-top: 5px;
+  }
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+}

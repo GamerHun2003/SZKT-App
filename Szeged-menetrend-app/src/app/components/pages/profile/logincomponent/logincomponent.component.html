@@ -1,0 +1,25 @@
+<mat-card class="userinfoscard">
+    <div class="form-container">
+      <h3 class="form-title">Bejelentkezés</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>Email-cím</mat-label>
+          <input matInput formControlName="email" type="email" placeholder="pelda@gmail.com" />
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            Email cím kötelező
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+            Valós email címet adj meg
+          </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill">
+          <mat-label>Jelszó</mat-label>
+          <input matInput formControlName="password" type="password" placeholder="********" />
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Jelszó kötelező</mat-error>
+        </mat-form-field>
+      
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Bejelentkezés</button>
+      </form>
+    </div>
+  </mat-card>

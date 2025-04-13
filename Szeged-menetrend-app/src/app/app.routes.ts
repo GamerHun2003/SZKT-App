@@ -4,6 +4,7 @@ import { ScheduleComponent } from './components/pages/schedule/schedule.componen
 import { FavoritesComponent } from './components/pages/favorites/favorites.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { TicketComponent } from './components/pages/ticket/ticket.component';
+import { UserinfosComponent } from './components/pages/profile/userinfos/userinfos.component';
 
 
 export const routes: Routes = [
@@ -12,6 +13,5 @@ export const routes: Routes = [
     {path: 'schedule', component: ScheduleComponent},
     {path: 'favorites', component: FavoritesComponent},
     {path: 'profile', component: ProfileComponent},
-    {path: 'ticket', component: TicketComponent},
-
+    {path: 'ticket', component: TicketComponent}
 ];

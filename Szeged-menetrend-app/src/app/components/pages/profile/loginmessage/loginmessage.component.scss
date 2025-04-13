@@ -1,0 +1,47 @@
+//Színek
+$loggeninborder: #53ad68;
+$loggeninbackground: #d4edda;
+$loggedintext: #155724;
+$notloggeninborder: #c20013;
+$notloggeninbackground: #f8d7da;
+$notloggedintext: #721c24;
+//Logged in stílus üzenet
+.logged-in {
+    background-color: $loggeninbackground;  
+    border: 2px solid $loggeninborder;  
+    padding: 10px;
+    color: $loggedintext;  
+    border-radius: 5px;
+    font-size: 0.85rem;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+//Not logged in stílus üzenet
+.not-logged-in {
+    background-color: $notloggeninbackground;  
+    border: 2px solid $notloggeninborder;  
+    padding: 10px;
+    color: $notloggedintext;  
+    border-radius: 5px;
+    font-size: 0.85rem;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+//Keskeny szélesség beállításai
+@media (max-width: 480px) {
+    .not-logged-in{
+        width: 70vw;
+    }
+    .logged-in{
+        font-size: 0.90rem;
+        display: flex;
+    }
+}
+//Kicsi magasság beállításai
+@media (max-height: 670px) {
+    .not-logged-in{
+        width: 60vw;
+    }
+    .logged-in{
+        font-size: 0.75rem;
+        display: flex;
+    }
+}

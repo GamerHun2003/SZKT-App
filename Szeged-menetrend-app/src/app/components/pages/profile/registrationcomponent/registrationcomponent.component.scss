@@ -1,0 +1,118 @@
+$electricblue: #4787ff;
+:host {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #121212;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  mat-card.userinfoscard {
+    background-color: #1d1d1d;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid $electricblue;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-title {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: $electricblue;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 1rem;
+  
+    .mat-form-field-label {
+      font-size: 0.85rem;
+      color: #b0b0b0;
+    }
+  
+    .mat-input-element {
+      font-size: 0.95rem;
+      padding: 6px 0;
+      color: white;
+    }
+  
+    .mat-error {
+      font-size: 0.75rem;
+      color: #ff4d4d;
+    }
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    background-color: #2196f3;
+    color: white;
+    border-radius: 6px;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #1976d2;
+    }
+  
+    &:disabled {
+      background-color: #555;
+      cursor: not-allowed;
+    }
+  }
+  
+  button[type="button"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 2px solid $electricblue;
+    color: $electricblue;
+    background-color: transparent;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      border: 2px solid #2d8dec;
+      color: #2d8dec;
+      background-color: #2b2b2b;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    mat-card.userinfoscard {
+      padding: 1rem;
+    }
+  
+    .form-title {
+      font-size: 1rem;
+    }
+  
+    button[type="submit"] {
+      padding: 8px;
+      font-size: 0.85rem;
+    }
+  
+    mat-form-field {
+      .mat-form-field-label {
+        font-size: 0.8rem;
+      }
+  
+      .mat-input-element {
+        font-size: 0.85rem;
+      }
+    }
+  }

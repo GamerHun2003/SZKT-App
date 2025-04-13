@@ -1,38 +1,68 @@
-<legend class="form-title">Személyes adatok</legend>
-<div class="form-container">    
+
+<mat-card class="userinfoscard">
+  <div class="form-container">
+    <h3 class="form-title">Személyes adatok</h3>
+
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <legend class="form-title">Veztéknév</legend>
-        <mat-form-field appearance="fill">
-            <input matInput formControlName="firstName" />
-            <mat-error *ngIf="form.get('firstName')?.hasError('required')">Add meg a vezetékneved</mat-error>
-        </mat-form-field>
-        <legend class="form-title">Keresztnév</legend>
-        <mat-form-field appearance="fill">
-            <input matInput formControlName="lastName" />
-            <mat-error *ngIf="form.get('lastName')?.hasError('required')">Add meg a keresztneved</mat-error>
-        </mat-form-field>
-        
-        <legend class="form-title">Email-cím</legend>
-        <mat-form-field appearance="fill">
-            <input matInput formControlName="email" type="email" placeholder="pelda@gmail.com"/>
-            <mat-error *ngIf="form.get('email')?.hasError('required')">Szükséges email címet megadni</mat-error>
-            <mat-error *ngIf="form.get('email')?.hasError('email')">Valós emailt adj meg</mat-error>
-        </mat-form-field>
-        
-        <legend class="form-title">Kártyaszám</legend>
-        <mat-form-field appearance="fill">
-            <input matInput formControlName="cardNumber" type="text" [value]="form.get('cardNumber')?.value | cardNumber" placeholder="5342-6334-4243-2344"/>
-            <mat-error *ngIf="form.get('cardNumber')?.hasError('required')">Card number is required</mat-error>
-            <mat-error *ngIf="form.get('cardNumber')?.hasError('pattern')">Invalid card number format</mat-error>
-        </mat-form-field>
 
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Vezetéknév</mat-label>
+        <input matInput formControlName="lastName" />
+        <mat-error *ngIf="form.get('lastName')?.hasError('required')">
+          Add meg a vezetékneved
+        </mat-error>
+        <mat-error *ngIf="form.get('lastName')?.hasError('pattern')">
+          Csak betűket tartalmazhat
+        </mat-error>
+      </mat-form-field>
 
-        <legend class="form-title">Diákazonosító</legend>
-        <mat-form-field appearance="fill">
-            <mat-label>Student ID</mat-label>
-            <input matInput formControlName="studentId" />
-        </mat-form-field>
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Keresztnév</mat-label>
+        <input matInput formControlName="firstName" />
+        <mat-error *ngIf="form.get('firstName')?.hasError('required')">
+          Add meg a keresztneved
+        </mat-error>
+        <mat-error *ngIf="form.get('firstName')?.hasError('pattern')">
+          Csak betűket tartalmazhat
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Email-cím</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="pelda@gmail.com" />
+        <mat-error *ngIf="form.get('email')?.hasError('required')">
+          Szükséges email címet megadni
+        </mat-error>
+        <mat-error *ngIf="form.get('email')?.hasError('email')">
+          Valós emailt adj meg
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Kártyaszám</mat-label>
+        <input matInput 
+        formControlName="cardNumber" 
+        [value]="form.get('cardNumber')?.value | cardNumber" 
+        (input)="onCardNumberInput(form.get('cardNumber')?.value)"
+        placeholder="5342-6334-4243-2344" 
+        [maxlength]="cardType === 'American Express' ? 17 : 19"
+        inputmode="numeric"
+        (keydown)="blockNonNumbers($event)"
+        />
         
-        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Mentés</button>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Diákazonosító</mat-label>
+        <input matInput formControlName="studentId" 
+        maxlength="10"/>
+      </mat-form-field>
+
+      <button type="button" (click)="onCancel()">Mégse</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        Mentés
+      </button>
+      
     </form>
   </div>
+</mat-card>
